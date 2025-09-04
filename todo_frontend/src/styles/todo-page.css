@@ -1,0 +1,173 @@
+.todo-page {
+  position: relative;
+  background: var(--bg-page);
+}
+
+/* Status bar mimic - height 44px */
+.statusbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--statusbar-height);
+  background: var(--bg-primary-rect);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: var(--color-ffffff);
+}
+.statusbar .status-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.statusbar .signal, .statusbar .wifi, .statusbar .battery {
+  width: 16px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--color-ebebf5);
+}
+
+/* App bar 118px with style_2 background (#9395d3) and white title */
+.appbar {
+  position: sticky;
+  top: var(--statusbar-height);
+  z-index: 9;
+  height: var(--appbar-height);
+  background: var(--bg-primary-rect);
+  display: flex;
+  align-items: flex-end;
+  padding: 24px 20px;
+}
+.appbar-title {
+  margin: 0;
+  color: var(--color-ffffff); /* typo_8 color */
+}
+.calendar {
+  margin-left: auto;
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: var(--color-ffffff);
+  opacity: 0.9;
+}
+
+/* Tab bar 68px height */
+.tabbar {
+  position: sticky;
+  top: calc(var(--statusbar-height) + var(--appbar-height));
+  z-index: 8;
+  height: var(--tabbar-height);
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-d6d7ef);
+}
+.tabbar .tab {
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  font: inherit;
+}
+.tabbar .tab.active {
+  text-decoration: underline;
+}
+
+/* Background rectangle from style_1 (d6d7ef) behind the list area */
+.background-rect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--statusbar-height) + var(--appbar-height) + var(--tabbar-height));
+  bottom: 0;
+  background: var(--bg-background-rect);
+  z-index: 0;
+}
+
+/* Todos container positioned over background rect */
+.todos {
+  position: relative;
+  z-index: 1;
+  padding: 16px 7px 96px 7px; /* bottom padding to avoid FAB overlap */
+  display: grid;
+  gap: 16px;
+}
+
+/* Card based on style_22 */
+.todo-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  min-height: 82px; /* exact height from figma for each card */
+  padding: 16px 16px;
+}
+
+/* Titles block sizes per figma (Title 13/600, Subtitle 10/400) */
+.todo-card .title {
+  margin: 0 0 6px 0;
+}
+.todo-card .subtitle {
+  margin: 0;
+}
+
+/* Actions: Pencil, Trash, CheckCircle placeholders aligned to the right */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 16px;
+}
+.icon-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--border-b3b7ee); /* style_15 border color */
+  color: var(--border-b3b7ee);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Floating action button: 70x70, circle, style_2 fill */
+.fab {
+  font-size: 28px;
+  line-height: 1;
+}
+.fab .plus {
+  transform: translateY(-2px);
+  font-weight: 600;
+}
+
+/* Add form inline style */
+.add-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  background: var(--color-ffffff);
+  padding: 12px;
+  border-radius: var(--radius-15);
+  box-shadow: var(--shadow-0);
+}
+.add-form input {
+  border: 1px solid var(--color-d1d1d6);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+}
+.add-form button {
+  border: none;
+  border-radius: 10px;
+  background: var(--bg-primary-rect);
+  color: var(--color-ffffff);
+  padding: 0 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive handling */
+@media (min-width: 415px) {
+  .todos { padding-left: 7px; padding-right: 7px; }
+}
