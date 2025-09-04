@@ -1,0 +1,151 @@
+:root {
+  /* Colors from design system */
+  --color-ffffff: #ffffff;
+  --color-d6d7ef: #d6d7ef;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+  --color-d1d1d6: #d1d1d6;
+  --color-ebebf5: #ebebf5;
+  --color-34c759: #34c759;
+  --color-ffd60a: #ffd60a;
+  --color-b3b7ee: #b3b7ee;
+
+  /* Typography tokens (family, sizes) */
+  --font-family-jost: "Jost", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+
+  --typo-0-size: 10px;  --typo-0-weight: 400;  --typo-0-line: 14.45px;
+  --typo-1-size: 24px;  --typo-1-weight: 600;  --typo-1-line: 34.68px;
+  --typo-2-size: 13px;  --typo-2-weight: 600;  --typo-2-line: 18.785px;
+  --typo-3-size: 16px;  --typo-3-weight: 400;  --typo-3-line: 23.12px;
+  --typo-4-size: 20px;  --typo-4-weight: 600;  --typo-4-line: 28.9px;
+  --typo-5-size: 15px;  --typo-5-weight: 400;  --typo-5-line: 21.675px;
+
+  /* Named typography colors from design system */
+  --typo-6-color: var(--color-9395d3);
+  --typo-7-color: var(--color-8b8787);
+  --typo-8-color: var(--color-ffffff);
+  --typo-9-color: var(--color-9395d3);
+  --typo-10-color: var(--color-000000);
+  --typo-11-color: var(--color-8b8787);
+  --typo-12-color: var(--color-ffffff);
+  --typo-13-color: var(--color-ffffff);
+
+  /* Radii */
+  --radius-1: 1px;
+  --radius-15: 15px;
+  --radius-20: 20px;
+
+  /* Shadow from style_21/style_22 (shadow_0) */
+  --shadow-0: 0 4px 4px rgba(0, 0, 0, 1);
+
+  /* Layout helpers */
+  --screen-width: 414px;
+  --appbar-height: 118px;
+  --tabbar-height: 68px;
+  --statusbar-height: 44px;
+
+  /* Semantic colors mapped from styles */
+  --bg-page: var(--color-ffffff);         /* style_0 */
+  --bg-background-rect: var(--color-d6d7ef); /* style_1 */
+  --bg-primary-rect: var(--color-9395d3); /* style_2 */
+  --border-b3b7ee: var(--color-b3b7ee);   /* style_15 */
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  font-family: var(--font-family-jost);
+  color: var(--color-000000);
+}
+.container-viewport {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--screen-width);
+  min-height: 100vh;
+  background: var(--bg-page);
+  position: relative;
+}
+
+/* Typography utility classes mapped to tokens */
+.typo-title-24-600 {
+  font-size: var(--typo-1-size);
+  font-weight: var(--typo-1-weight);
+  line-height: var(--typo-1-line);
+}
+.typo-20-600 {
+  font-size: var(--typo-4-size);
+  font-weight: var(--typo-4-weight);
+  line-height: var(--typo-4-line);
+}
+.typo-16-400 {
+  font-size: var(--typo-3-size);
+  font-weight: var(--typo-3-weight);
+  line-height: var(--typo-3-line);
+}
+.typo-15-400 {
+  font-size: var(--typo-5-size);
+  font-weight: var(--typo-5-weight);
+  line-height: var(--typo-5-line);
+}
+.typo-13-600 {
+  font-size: var(--typo-2-size);
+  font-weight: var(--typo-2-weight);
+  line-height: var(--typo-2-line);
+}
+.typo-10-400 {
+  font-size: var(--typo-0-size);
+  font-weight: var(--typo-0-weight);
+  line-height: var(--typo-0-line);
+}
+
+/* Icon placeholder baseline */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Card base from style_22 */
+.card {
+  background: var(--color-ffffff);
+  border-radius: var(--radius-15);
+  box-shadow: var(--shadow-0);
+}
+
+/* Floating action button baseline */
+.fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--bg-primary-rect); /* style_2 #9395d3 */
+  color: var(--color-ffffff);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-0);
+  cursor: pointer;
+  border: none;
+}
+
+/* Tabs baseline */
+.tabs {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.tab {
+  cursor: pointer;
+}
+.tab.all {
+  color: var(--typo-6-color);
+}
+.tab.completed {
+  color: var(--typo-7-color);
+}
+
+/* Hide utility */
+.hidden { display: none !important; }
